@@ -1,0 +1,182 @@
+/* For deepdrawing of paper  */
+/* This function imports the CAD geometries of the Dies  */
+/* And creates a plane for the paper  */
+/* This code was written by Carl - Magnus Everitt in 2020 */
+/* For bugs, contact carl-magnus.everitt@ri.se */
+/* Code is not optimised for speed, memory or operation */
+
+define:
+Float MyExpressFunc(Float tt)
+{
+   Float p_mesh, d_mesh, p_thickness, d_thickness, extra, trans;
+   /* p stands for paper and d for die */
+
+   /* Mesh parameters. The smaller the finer mesh  */
+   d_mesh=2.0;
+   p_mesh=d_mesh/2.0;
+
+
+   p_thickness=2.0;
+   d_thickness=1.0;
+   extra=2;
+   char p[2048];
+
+
+
+  /*=========================== */
+  /* Import FemaleDie */
+  /*=========================== */
+
+    ExecuteCommand("stepreadconfig MM 1 1 ");
+    ExecuteCommand("open step \"C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\FemaleDie.step\"");
+
+  /*=========================== */
+  /* Build mesh */
+  /*=========================== */
+
+    ExecuteCommand("genselect target occobject");
+    ExecuteCommand("occfilter clear");
+    ExecuteCommand("occfilter add Face");
+    ExecuteCommand("genselect occobject add occobject  1f");
+    ExecuteCommand("genselect occobject add occobject  2f");
+    ExecuteCommand("genselect occobject add occobject  3f");
+    ExecuteCommand("genselect occobject add occobject  4f");
+    ExecuteCommand("genselect occobject add occobject  5f");
+    ExecuteCommand("genselect occobject add occobject  6f");
+    ExecuteCommand("genselect occobject add occobject  7f");
+    ExecuteCommand("genselect occobject add occobject  8f");
+    ExecuteCommand("genselect occobject add occobject  9f");
+    ExecuteCommand("genselect occobject add occobject  14f");
+    ExecuteCommand("genselect occobject add occobject  15f");
+    ExecuteCommand("genselect occobject add occobject  16f");
+    ExecuteCommand("genselect occobject add occobject  17f");
+    ExecuteCommand("genselect occobject add occobject  18f");
+    ExecuteCommand("genselect occobject add occobject  19f");
+    ExecuteCommand("genselect occobject add occobject  20f");
+    ExecuteCommand("genselect occobject add occobject  21f");
+    ExecuteCommand("genselect occobject add occobject  23f");
+    ExecuteCommand("genselect occobject add occobject  24f");
+    ExecuteCommand("genselect occobject add occobject  25f");
+    ExecuteCommand("genselect occobject add occobject  26f");
+    ExecuteCommand("genselect occobject add occobject  27f");
+    ExecuteCommand("genselect occobject add occobject  28f");
+    ExecuteCommand("genselect occobject add occobject  29f");
+    ExecuteCommand("genselect occobject add occobject  30f");
+    ExecuteCommand("genselect occobject add occobject  31f");
+
+
+     sprintf(p, "occmesh mesh 0, 1 0 1 %f 0 0", d_mesh );
+     ExecuteCommand(p);
+     ExecuteCommand("occmesh accept 1 0.0001 0 1");
+     ExecuteCommand("Build Rendering data");
+
+
+  /*=========================== */
+  /*Move part so that top part is at 0 */
+  /*=========================== */
+    ExecuteCommand("genselect target node");
+    ExecuteCommand("genselect transfer 0");
+    ExecuteCommand("genselect node add part 1/0"); 
+    ExecuteCommand("translate_model 0 0 -20");
+    ExecuteCommand("translate_model accept 0 1392 1801");
+    ExecuteCommand("genselect clear");
+
+
+
+
+    /*=========================== */
+  /* Import MaleDie */
+  /*=========================== */
+
+    ExecuteCommand("stepreadconfig MM 1 1 ");
+    ExecuteCommand("open step \"C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie.step\"");
+
+  /*=========================== */
+  /* Build mesh */
+  /*=========================== */
+
+    ExecuteCommand("genselect target occobject");
+    ExecuteCommand("occfilter clear");
+    ExecuteCommand("occfilter add Face");
+    ExecuteCommand("genselect occobject add occobject  32f");
+    ExecuteCommand("genselect occobject add occobject  33f");
+    ExecuteCommand("genselect occobject add occobject  34f");
+    ExecuteCommand("genselect occobject add occobject  35f");
+    ExecuteCommand("genselect occobject add occobject  36f");
+    ExecuteCommand("genselect occobject add occobject  37f");
+    ExecuteCommand("genselect occobject add occobject  38f");
+    ExecuteCommand("genselect occobject add occobject  39f");
+    ExecuteCommand("genselect occobject add occobject  40f");
+
+    ExecuteCommand("genselect occobject add occobject  45f");
+    ExecuteCommand("genselect occobject add occobject  46f");
+    ExecuteCommand("genselect occobject add occobject  47f");
+    ExecuteCommand("genselect occobject add occobject  48f");
+    ExecuteCommand("genselect occobject add occobject  49f");
+    ExecuteCommand("genselect occobject add occobject  50f");
+    ExecuteCommand("genselect occobject add occobject  51f");
+    ExecuteCommand("genselect occobject add occobject  52f");
+    
+    ExecuteCommand("genselect occobject add occobject  54f");
+    ExecuteCommand("genselect occobject add occobject  55f");
+    ExecuteCommand("genselect occobject add occobject  56f");
+    ExecuteCommand("genselect occobject add occobject  57f");
+    ExecuteCommand("genselect occobject add occobject  58f");
+    ExecuteCommand("genselect occobject add occobject  59f");
+    ExecuteCommand("genselect occobject add occobject  60f");
+    ExecuteCommand("genselect occobject add occobject  61f");
+    ExecuteCommand("genselect occobject add occobject  62f");
+
+
+     sprintf(p, "occmesh mesh 0, 1 0 1 %f 0 0", d_mesh );
+     ExecuteCommand(p);
+     ExecuteCommand("occmesh accept 1 0.0001 0 1");
+     ExecuteCommand("Build Rendering data");
+
+
+    /*=========================== */
+    /*Move part so that bottom part is a bit over the paper */
+    /*=========================== */
+    ExecuteCommand("genselect target node");
+    ExecuteCommand("genselect transfer 0");
+    ExecuteCommand("genselect node add part 2/0"); 
+    trans=10+p_thickness+d_thickness+extra;
+    sprintf(p, "translate_model 0 0 %f", trans);
+    ExecuteCommand(p);
+    ExecuteCommand("translate_model accept 0 1392 1801");
+    ExecuteCommand("genselect clear");
+
+    /*=========================== */
+    /*Build paper sheet */
+    /*=========================== */
+    sprintf(p, "plane 0 0 -70 0 -70 0 0.0");
+    ExecuteCommand(p); 
+
+    ExecuteCommand("genselect target occobject");
+    ExecuteCommand("occfilter clear");
+    ExecuteCommand("occfilter add Face");
+    ExecuteCommand("genselect occobject add occobject  63f");
+    sprintf(p, "occmesh mesh 0, 1 0 1 %f 0 0", p_mesh );
+     ExecuteCommand(p);
+     ExecuteCommand("occmesh accept 1 0.0001 0 1");
+     ExecuteCommand("Build Rendering data");
+
+   /*=========================== */
+    /*Move part so tha paper is between the dies*/
+    /*=========================== */
+    ExecuteCommand("genselect target node");
+    ExecuteCommand("genselect transfer 0");
+    ExecuteCommand("genselect node add part 3/0"); 
+    trans=extra/2+p_thickness/2+d_thickness/2;
+    sprintf(p, "translate_model 0 0 %f", trans);
+    ExecuteCommand(p);
+    ExecuteCommand("translate_model accept 0 1392 1801");
+    ExecuteCommand("genselect clear");
+
+    
+	}
+
+
+
+}
+MyExpressFunc(1.0);

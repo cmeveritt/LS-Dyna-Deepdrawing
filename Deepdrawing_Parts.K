@@ -1,9 +1,6 @@
 $# LS-DYNA Keyword file created by LS-PrePost(R) V4.7.1 - 23Nov2019
 $# Created on Aug-13-2020 (12:18:01)
 *KEYWORD
-*TITLE
-$#                                                                         title
-LS-DYNA keyword deck by LS-PrePost
 *ELEMENT_SHELL
 $#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8
        1       1      94     145     293     143       0       0       0       0
