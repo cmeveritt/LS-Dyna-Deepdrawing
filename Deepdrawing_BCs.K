@@ -7,7 +7,7 @@ $#     cid                                                                 title
 $#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr
          3         1         3         3         0         0         0         0
 $#      fs        fd        dc        vc       vdc    penchk        bt        dt
-       0.0       0.0       0.0       0.0       0.0         0       0.01.00000E20
+       1.0       1.0       0.0       0.0       0.0         0       0.01.00000E20
 $#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf
        1.0       1.0       0.0       0.0       1.0       1.0       1.0       1.0
 *CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID
@@ -16,7 +16,7 @@ $#     cid                                                                 title
 $#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr
          3         2         3         3         0         0         0         0
 $#      fs        fd        dc        vc       vdc    penchk        bt        dt
-       0.0       0.0       0.0       0.0       0.0         0       0.01.00000E20
+       1.0       1.0       0.0       0.0       0.0         0       0.01.00000E20
 $#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf
        1.0       1.0       0.0       0.0       1.0       1.0       1.0       1.0
 *BOUNDARY_PRESCRIBED_MOTION_SET_ID
@@ -35,5 +35,5 @@ $#    lcid      sidr       sfa       sfo      offa      offo    dattyp     lcint
          1         0       1.0       1.0       0.0       0.0         0         0
 $#                a1                  o1  
                  0.0                 0.0
-               100.0                10.0
+				 3.0                 8.0
 *END
