@@ -1,3 +1,7 @@
 $# LS-PrePost command file created by LS-PrePost(R) V4.7.1 - 23Nov2019 -64bit-Window
-$# Created on Aug-13-2020 (12:18:12)
-open keyword "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\Deepdrawing_Main.k"
+$# Created on Aug-13-2020 (14:15:18)
+open keyword "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\FemaleDieMesh.K"
+assembly off fem 1
+assembly on fem 1
+-M 1
++M 1
