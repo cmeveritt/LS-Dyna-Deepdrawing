@@ -173,6 +173,26 @@ Float MyExpressFunc(Float tt)
     ExecuteCommand("translate_model accept 0 1392 1801");
     ExecuteCommand("genselect clear");
 
+
+   /*=========================== */
+    /*Create node sets*/
+    /*=========================== */
+
+    ExecuteCommand("genselect clear all");
+    ExecuteCommand("genselect node add part 1/0 ");
+    ExecuteCommand("setnode createset 1 1 0 0 0 0 \"Female Die\" ");
+    ExecuteCommand("genselect clear");
+
+    ExecuteCommand("genselect clear all");
+    ExecuteCommand("genselect node add part 2/0 ");
+    ExecuteCommand("setnode createset 2 1 0 0 0 0 \"Male Die\" ");
+    ExecuteCommand("genselect clear");
+
+    ExecuteCommand("genselect clear all");
+    ExecuteCommand("genselect node add part 3/0 ");
+    ExecuteCommand("setnode createset 3 1 0 0 0 0 \"Paper\" ");
+    ExecuteCommand("genselect clear");
+
     
 	}
 
