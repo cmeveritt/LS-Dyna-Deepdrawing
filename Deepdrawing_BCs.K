@@ -1,5 +1,5 @@
 $# LS-DYNA Keyword file created by LS-PrePost(R) V4.7.1 - 23Nov2019
-$# Created on Aug-13-2020 (09:22:51)
+$# Created on Aug-13-2020 (12:18:01)
 *KEYWORD
 *CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID
 $#     cid                                                                 title
@@ -35,5 +35,5 @@ $#    lcid      sidr       sfa       sfo      offa      offo    dattyp     lcint
          1         0       1.0       1.0       0.0       0.0         0         0
 $#                a1                  o1  
                  0.0                 0.0
-				 3.0                 8.0
+                 3.0                 8.0
 *END
