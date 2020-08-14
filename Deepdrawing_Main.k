@@ -3,7 +3,7 @@ $# Created on Aug-13-2020 (12:18:01)
 *KEYWORD
 *PARAMETER
 $#   prmr1      val1     prmr2      val2     prmr3      val3     prmr4      val4
-rThickness2.0       rMesh     0.7                                               
+rThickness2.0                                                     
 *TITLE
 $#                                                                         title
 LS-DYNA keyword deck by LS-PrePost
