@@ -31,8 +31,6 @@ $#   ioopt      rate    cutoff    window      type      pset
 $#                                                                      filename
 Deepdrawing_Mesh.K
 $#                                                                      filename
-Deepdrawing_Parts.K
-$#                                                                      filename
 Deepdrawing_BCs.K
 $#                                                                      filename
 Deepdrawing_Material.K

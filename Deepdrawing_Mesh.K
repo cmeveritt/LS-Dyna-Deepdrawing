@@ -1,5 +1,5 @@
 $# LS-DYNA Keyword file created by LS-PrePost(R) V4.7.1 - 23Nov2019
-$# Created on Aug-13-2020 (15:17:05)
+$# Created on Aug-14-2020 (06:56:53)
 *KEYWORD   
 *ELEMENT_SHELL
 $#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8
@@ -15543,17 +15543,17 @@ $#   nid               x               y               z      tc      rc
 $#                                                                         title
 LSHELL1
 $#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid
-         1         0         0         0         0         0         0         0
+         1         1         1         0         0         0         0         0
 *PART
 $#                                                                         title
 LSHELL2
 $#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid
-         2         0         0         0         0         0         0         0
+         2         1         2         0         0         0         0         0
 *PART
 $#                                                                         title
 LSHELL3
 $#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid
-         3         0         0         0         0         0         0         0
+         3         2         2         0         0         0         0         0
 *SET_NODE_LIST_TITLE
 Female Die
 $#     sid       da1       da2       da3       da4    solver      

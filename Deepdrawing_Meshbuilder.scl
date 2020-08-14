@@ -193,6 +193,14 @@ Float MyExpressFunc(Float tt)
     ExecuteCommand("setnode createset 3 1 0 0 0 0 \"Paper\" ");
     ExecuteCommand("genselect clear");
 
+
+   /*=========================== */
+    /*Specify secid amd mid*/
+    /*=========================== */
+    ExecuteCommand("partdata assignapply 0 1 1 -1 -1 -1 -1 -1 1");
+    ExecuteCommand("partdata assignapply 0 1 2 -1 -1 -1 -1 -1 2");
+    ExecuteCommand("partdata assignapply 0 2 2 -1 -1 -1 -1 -1 3");
+
     
 	}
 
