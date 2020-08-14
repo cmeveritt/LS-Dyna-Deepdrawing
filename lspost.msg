@@ -1,7 +1,7 @@
 runscript ""C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\Deepdrawing_Meshbuilder.scl""
 (Re)Load script : C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\Deepdrawing_Meshbuilder.scl
 stepreadconfig MM 1 1 
-open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\FemaleDie.step"
+open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie_Calle.step"
 Reading STEP files
 ac
 Finished reading model
@@ -46,7 +46,7 @@ translate_model 0 0 -20
 translate_model accept 0 1392 1801
 genselect clear
 stepreadconfig MM 1 1 
-open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie.step"
+open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie_Calle.step"
 Reading STEP files
 Finished reading model
 genselect target occobject
@@ -89,7 +89,7 @@ genselect node add part 2/0
 translate_model 0 0 15.000000
 translate_model accept 0 1392 1801
 genselect clear
-plane 0 0 -70 0 -70 0 0.0
+plane 0 0 0 70 0 70 0.0
 genselect target occobject
 occfilter clear
 occfilter add Face
@@ -120,4 +120,4 @@ genselect clear
 partdata assignapply 0 1 1 -1 -1 -1 -1 -1 1
 partdata assignapply 0 1 2 -1 -1 -1 -1 -1 2
 partdata assignapply 0 2 2 -1 -1 -1 -1 -1 3
-Script file C:\Users\carlmagnusev\Documents\Git
+Script file C:\Users\carlmagnusev\Docum
