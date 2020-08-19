@@ -1,8 +1,8 @@
 $# LS-PrePost command file created by LS-PrePost(R) V4.7.1 - 23Nov2019 -64bit-Window
-$# Created on Aug-14-2020 (08:51:00)
+$# Created on Aug-19-2020 (09:23:37)
 runscript ""C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\Deepdrawing_Meshbuilder.scl""
 stepreadconfig MM 1 1 
-open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie_Calle.step"
+open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\FemaleDie.step"
 ac
 genselect target occobject
 occfilter clear
@@ -44,7 +44,7 @@ translate_model 0 0 -20
 translate_model accept 0 1392 1801
 genselect clear
 stepreadconfig MM 1 1 
-open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie_Calle.step"
+open step "C:\Users\carlmagnusev\Documents\GitHub\LS-Dyna-Deepdrawing\MaleDie.step"
 genselect target occobject
 occfilter clear
 occfilter add Face
@@ -84,7 +84,7 @@ genselect node add part 2/0
 translate_model 0 0 15.000000
 translate_model accept 0 1392 1801
 genselect clear
-plane 0 0 0 70 0 70 0.0
+plane 0 0 -70 0 -70 0 0.0
 genselect target occobject
 occfilter clear
 occfilter add Face
@@ -116,9 +116,74 @@ partdata assignapply 0 1 2 -1 -1 -1 -1 -1 2
 partdata assignapply 0 2 2 -1 -1 -1 -1 -1 3
 assembly off shape 2
 assembly off shape 1
-assembly off fem 1
-assembly on fem 1
-assembly off fem 1
-assembly on fem 1
-assembly off fem 1
-assembly on fem 1
+genselect target part
+selectpart select 1
+selectpart on S1/0 
+selectpart info;
+genselect part remove part 1/0 
+selectpart on S1/0 
+selectpart select 0
+plotmode thick on;
+plotmode all;
+plotmode S1/0 ;
+plotmode userthick 1.000000
+genselect target part
+partdata select 1
+clearid part
+partdata select 0
+genselect target part
+selectpart select 1
+genselect target component
+selectpart select 0
+selectentity Set Node
+selectentity off
+bpm reset
+genselect target component
+selectpart select 1
+selectpart select 0
+refcheck check
+selectentity getalllabel
+genselect clear
+clearpick
+genselect target node
+refcheck selrefclear
+genselect clear
+clearpick
+genselect target node
+selectentity Set Node
+displayentity Set Node off all
+displayentity Set Node on all
+displayentity Set Node rev all
+displayentity Set Node on all
+selectentity All
+displayentity Set Node on all
+selectentity None
+displayentity Set Node off all
+selectentity None
+displayentity Set Node off all
+selectentity off
+bpm reset
+genselect clear
+clearpick
+genselect target node
+refcheck selrefclear
+genselect clear
+clearpick
+genselect target node
+genselect clear
+clearpick
+genselect target node
+refcheck selrefclear
+genselect clear
+clearpick
+genselect target node
+smform ez init
+smform drawbead name DBead
+partdata select 0
+genselect clear
+clearpick
+genselect target node
+refcheck selrefclear
+genselect clear
+clearpick
+genselect target node
